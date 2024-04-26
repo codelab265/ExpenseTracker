@@ -5,7 +5,7 @@ import { Head, router, useForm } from "@inertiajs/react";
 import AddExpense from "@/Components/dashboard/expenses/AddExpense";
 import ExpenseList from "@/Components/dashboard/expenses/ExpenseList";
 import { Button } from "@/Components/ui/button";
-import { Delete, Trash } from "lucide-react";
+import { ArrowLeft, Delete, Trash } from "lucide-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -35,7 +35,15 @@ function Expenses({ auth, budget }) {
             <Head title="My expenses" />
             <div className="p-10">
                 <div className="flex items-center justify-between">
-                    <h2 className="text-3xl font-bold">My expenses</h2>
+                    <div className="flex items-center gap-2">
+                        <ArrowLeft
+                            className="cursor-pointer hover:text-primary transition-all duration-300"
+                            onClick={() => {
+                                history.back();
+                            }}
+                        />
+                        <h2 className="text-3xl font-bold">My expenses</h2>
+                    </div>
 
                     <div className="flex gap-2 items-center">
                         <EditBudget budget={budget} />

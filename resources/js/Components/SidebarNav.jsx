@@ -55,7 +55,7 @@ function SidebarNav({ auth }) {
                 <div className="p-5">
                     <img src="/assets/logo.svg" width={160} height={100} />
                 </div>
-                <div className="mt-5">
+                <div className="mt-5 space-y-2">
                     {MenuList.map((item) => (
                         <Link
                             key={item.id}
